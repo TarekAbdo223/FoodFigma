@@ -4,11 +4,18 @@ import SendButton from "./SendButton";
 import SocialCircle from "./SocialCircle";
 import { s, vs } from "react-native-size-matters";
 
-const SocialScreen = () => {
+const SocialScreen = ({
+  text,
+  icon,
+}: {
+  text: string;
+  icon: React.ReactNode;
+}) => {
   return (
     <View style={styles.container}>
-      <SocialCircle />
-      <Text style={styles.text}>WhatsApp</Text>
+      {/* <SocialCircle /> */}
+      <View style={styles.circle}>{icon}</View>
+      <Text style={styles.text}>{text}</Text>
       <SendButton />
     </View>
   );
@@ -29,5 +36,15 @@ const styles = StyleSheet.create({
     marginStart: s(14),
     color: "#8083A3",
     fontSize: s(12),
+  },
+  circle: {
+    width: s(46),
+    height: s(46),
+    borderRadius: s(23),
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#E4E6E8",
   },
 });
