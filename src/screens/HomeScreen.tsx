@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { s, vs } from "react-native-size-matters";
+import TopTbas from "../components/TopTbas";
 
 const HomeScreen = () => {
   return (
@@ -29,6 +30,7 @@ const HomeScreen = () => {
       >
         Lorem Ipsum is simply dummy text
       </Text>
+      <TopTbas />
     </View>
   );
 };
