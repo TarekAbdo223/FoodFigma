@@ -20,6 +20,7 @@ const TopTbas = () => {
               tabName === activeTab ? styles.active : "",
             ]}
             onPress={() => setActiveTab(tabName)}
+            key={tabName}
           >
             <Text
               style={[
