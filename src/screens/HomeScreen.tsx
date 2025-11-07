@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { s, vs } from "react-native-size-matters";
 import TopTbas from "../components/TopTbas";
 import MeditationCards from "../components/MeditationCards";
+import { dummyData } from "../data/data";
 
 const HomeScreen = () => {
   return (
     <View
       style={{
         paddingTop: vs(50),
-        paddingHorizontal: s(16),
+        paddingHorizontal: s(14),
       }}
     >
       <Text
@@ -32,7 +33,18 @@ const HomeScreen = () => {
         Lorem Ipsum is simply dummy text
       </Text>
       <TopTbas />
-      <MeditationCards />
+      {/* <MeditationCards /> */}
+      <FlatList
+        data={dummyData}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <MeditationCards />}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        columnWrapperStyle={{
+          marginBottom: vs(12),
+          justifyContent: "space-between",
+        }}
+      />
     </View>
   );
 };

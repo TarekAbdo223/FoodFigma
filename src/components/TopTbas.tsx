@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F5F4",
     height: vs(40),
     alignItems: "center",
+    marginBottom: 24,
   },
   active: {
     backgroundColor: activeBg,
