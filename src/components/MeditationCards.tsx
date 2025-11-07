@@ -13,12 +13,18 @@ const phoneWidth = Dimensions.get("window").width;
 console.log(phoneWidth);
 const cardWidth = (phoneWidth - s(14) * 3) / 2;
 
-const MeditationCards = () => {
+interface MeditationCardProps {
+  imageURL: string;
+  title: string;
+  date: string;
+}
+
+const MeditationCards = ({ imageURL, title, date }: MeditationCardProps) => {
   return (
     <ImageBackground
       style={styles.imageContainer}
       source={{
-        uri: "https://img.freepik.com/free-vector/organic-flat-people-meditating-illustration_23-2148906556.jpg?semt=ais_hybrid&w=740&q=80",
+        uri: imageURL,
       }}
       imageStyle={styles.image}
     >
@@ -27,10 +33,10 @@ const MeditationCards = () => {
         <Text style={styles.liveText}>Live</Text>
       </View>
       <View style={styles.cardContent}>
-        <Text style={styles.title}>Meditations</Text>
+        <Text style={styles.title}>{title}</Text>
         <View style={styles.dateContainer}>
           <VideoIcon />
-          <Text style={styles.dateText}>31st Jan - 09:00 am</Text>
+          <Text style={styles.dateText}>{date}</Text>
         </View>
       </View>
     </ImageBackground>

@@ -37,7 +37,14 @@ const HomeScreen = () => {
       <FlatList
         data={dummyData}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <MeditationCards />}
+        renderItem={({ item }) => (
+          <MeditationCards
+            imageURL={item.image}
+            date={item.date}
+            title={item.title}
+          />
+        )}
+        contentContainerStyle={{ paddingBottom: vs(120) }} // 👈 add space at bottom
         showsVerticalScrollIndicator={false}
         numColumns={2}
         columnWrapperStyle={{
