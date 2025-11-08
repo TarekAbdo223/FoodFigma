@@ -3,6 +3,7 @@ import React from "react";
 import BackButton from "../components/BackButton";
 import { s, vs } from "react-native-size-matters";
 import PaymentMethod from "../components/PaymentMethod";
+import PaymentList from "../components/PaymentList";
 
 const PaymentScreen = () => {
   return (
@@ -12,13 +13,13 @@ const PaymentScreen = () => {
           flexDirection: "row",
           alignItems: "center",
           marginBottom: vs(37),
+          paddingHorizontal: s(16),
         }}
       >
         <BackButton />
         <Text style={styles.paymentText}>Payment</Text>
       </View>
-      <PaymentMethod />
-      <PaymentMethod isSelected={true} />
+      <PaymentList />
     </View>
   );
 };
@@ -28,7 +29,6 @@ export default PaymentScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: s(16),
     paddingTop: vs(50),
   },
 

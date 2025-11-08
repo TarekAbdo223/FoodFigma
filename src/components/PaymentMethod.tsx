@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { ReactNode } from "react";
 import { CashIcon } from "../assets/Icons";
 import { s, vs } from "react-native-size-matters";
@@ -8,21 +8,25 @@ interface PayMethodCard {
   isSelected?: boolean;
   title: string;
   icon: ReactNode;
+  onPress: () => void;
 }
 
-const PaymentMethod = ({ isSelected = false, title, icon }: PayMethodCard) => {
+const PaymentMethod = ({
+  isSelected = false,
+  title,
+  icon,
+  onPress,
+}: PayMethodCard) => {
   return (
-    <View style={{ width: s(85) }}>
+    <TouchableOpacity style={{ width: s(85) }} onPress={onPress}>
       {isSelected && (
         <View style={styles.checkcontainer}>
           <Entypo name="check" size={s(14)} color="white" />
         </View>
       )}
-      <View style={[styles.card, isSelected && styles.activeCard]}>
-        <CashIcon />
-      </View>
-      <Text style={styles.label}>Cash</Text>
-    </View>
+      <View style={[styles.card, isSelected && styles.activeCard]}>{icon}</View>
+      <Text style={styles.label}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
