@@ -4,6 +4,7 @@ import BackButton from "../components/BackButton";
 import { s, vs } from "react-native-size-matters";
 import PaymentMethod from "../components/PaymentMethod";
 import PaymentList from "../components/PaymentList";
+import BankCardBox from "../components/BankCardBox";
 
 const PaymentScreen = () => {
   return (
@@ -20,6 +21,9 @@ const PaymentScreen = () => {
         <Text style={styles.paymentText}>Payment</Text>
       </View>
       <PaymentList />
+      <View style={{ paddingHorizontal: 24 }}>
+        <BankCardBox />
+      </View>
     </View>
   );
 };
