@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { s, vs } from "react-native-size-matters";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 const AddButton = () => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <AntDesign name="plus" size={s(20)} color="#FF7622" />
       <Text
         style={{
@@ -17,7 +17,7 @@ const AddButton = () => {
       >
         ADD NEW
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: vs(23),
+    paddingVertical: vs(16),
     borderWidth: s(2),
     borderRadius: s(10),
     borderColor: "#F0F5FA",
